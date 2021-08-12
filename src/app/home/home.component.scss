@@ -1,0 +1,116 @@
+.collection {
+    width: 100%;
+    background-color: rgb(245, 222, 179, 0.5);
+    position: relative;
+    display: inline-flex;
+    min-height: 100vh;
+
+    .nev {
+        width: 10%;
+        height: 100vh;
+        background-color: rgb(78, 78, 85, 0.5);
+        position: fixed;
+        top: 0%;
+        z-index: 2;
+
+        .logo {
+            width: 100%;
+            height: 4em;
+            background-color: rgb(63, 62, 78);
+            position: relative;
+            .material-icons {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+    .accList {
+        width: 100%;
+        height: 99vh;
+        position: relative;
+
+        // background-color: yellowgreen;
+
+        .searchBar {
+            position: fixed;
+            top: 0%;
+            width: 100%;
+            height: 4em;
+            background-color: white;
+
+            padding-left: 16%;
+            z-index: 1;
+            span,
+            input {
+                position: absolute;
+                top: 50%;
+                transform: translate(-0%, -50%);
+            }
+            span {
+                font-size: 15px;
+            }
+            input {
+                left: 16%;
+                text-decoration: none;
+                border: none;
+                overflow: hidden;
+                outline: hidden;
+            }
+        }
+
+        .title {
+            margin: auto;
+            text-align: left;
+            left: 0%;
+            top: 0%;
+            width: 100%;
+            margin-top: 5%;
+            position: fixed;
+            z-index: 1;
+            
+
+            h1 {
+                font-family: "Times New Roman", Times, serif;
+                font-size: 25px;
+            }
+        }
+
+        .accounts {
+            // margin: auto;
+            width: 80%;
+            height: 80vh;
+            // background-color: white;
+            z-index: 0;
+            position: absolute;
+            top: 90%;
+            left: 80%;
+            transform: translate(-80%, -90%);
+
+            .users {
+                width: 100%;
+                height: 70%;
+                overflow: scroll;
+            }
+            mat-grid-list {
+                background-color: white;
+                border-radius: 5px;
+            }
+        }
+    }
+}
+// .card {
+//     max-width: 80%;
+//     margin: auto;
+//     text-align: center;
+//     min-height: 400px;
+//     position: relative;
+//     background-color: white;
+//     border-radius: 5px;
+//     .table_container {
+//         width: 100%;
+//         background-color: cornflowerblue;
+//     }
+
+// }

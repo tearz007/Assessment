@@ -1,2 +1,106 @@
-<p>home works!</p>
+<div class="collection">
+
+  <div class="nev">
+    <div class="logo">
+      <span style="color: white;" class="material-icons">
+        account_balance
+      </span>
+    </div>
+  </div>
+
+  <div class="accList">
+
+    <div class="searchBar">
+
+      <span class="material-icons">
+        search
+      </span>
+      <input matInput placeholder="search with name">
+
+    </div>
+
+    <div class="title">
+      <h1>Acme Bank</h1>
+    </div>
+
+    <div class="accounts">
+
+      <mat-grid-list cols="4" rowHeight="5:1">
+        <mat-grid-tile>Acount Number</mat-grid-tile>
+        <mat-grid-tile>Acount Type</mat-grid-tile>
+        <mat-grid-tile> Balance </mat-grid-tile>
+        <mat-grid-tile></mat-grid-tile>
+      </mat-grid-list>
+      <br>
+      <div class="users">
+        <div *ngFor="let item of  temp">
+
+          <div *ngIf="item.AccountNum > 1">
+
+            <mat-grid-list cols="4" rowHeight="5:1">
+              <mat-grid-tile>{{item.AccountNum}}</mat-grid-tile>
+              <mat-grid-tile>{{item.AccountType}}</mat-grid-tile>
+              <mat-grid-tile> 
+     
+                <div *ngIf="item.amount >0; then thenB else elseB"></div>
+                <ng-template #thenB>
+                  ZAR{{ " "+item.amount}}
+                </ng-template>
+                <ng-template #elseB>
+                  -ZAR{{ " "+(item.amount+(-item.amount*2))}}
+                </ng-template>
+              
+              </mat-grid-tile>
+              <mat-grid-tile>
+               
+                <div *ngIf="item.State=='Active'; then thenBlock else elseBlock"></div>
+                <ng-template #thenBlock>
+                  <button (click)="notify()" style="border:1px solid ; background-color: rgb(88, 88, 161); color: white;" mat-button color="accent">Withdraw</button>
+                </ng-template>
+                <ng-template #elseBlock>
+                  <button style="border:1px solid ;" mat-button disabled>Withdraw</button>
+                </ng-template>
+
+
+              </mat-grid-tile>
+            </mat-grid-list>
+            <br>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="footer">
+        <mat-grid-list cols="4" rowHeight="5:1">
+          <mat-grid-tile>Balance</mat-grid-tile>
+          <mat-grid-tile></mat-grid-tile>
+          <mat-grid-tile> ZAR {{TotalAmount}} </mat-grid-tile>
+          <mat-grid-tile></mat-grid-tile>
+        </mat-grid-list>
+      </div>
+
+    </div>
+
+    <!-- <mat-card class="card">
+            <mat-card-header>
+                <mat-card-title>Account List</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+
+                <div *ngFor="let item of PeriodicElement">
+                    <mat-grid-list cols="4" rowHeight="5:1">
+                        <mat-grid-tile>{{item.position}}</mat-grid-tile>
+                        <mat-grid-tile>{{item.name}}</mat-grid-tile>
+                        <mat-grid-tile> {{item.weight}} </mat-grid-tile>
+                        <mat-grid-tile>{{item.symbol}}</mat-grid-tile>
+                    </mat-grid-list>
+                </div>
+            </mat-card-content>
+
+        </mat-card> -->
+
+  </div>
+
+</div>
+
 <router-outlet></router-outlet>
