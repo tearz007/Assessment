@@ -8,6 +8,9 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import {MatInputModule} from '@angular/material/input';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatButtonModule} from '@angular/material/button';
+import {AngularFireModule} from '@angular/fire'
+import { environment } from 'src/environments/environment';
+
 
 
 @NgModule({
@@ -25,6 +28,8 @@ import {MatButtonModule} from '@angular/material/button';
     MatInputModule,
     MatSidenavModule,
     MatButtonModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
+    
 
   ],
   providers: [],
